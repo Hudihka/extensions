@@ -66,6 +66,16 @@ extension UILabel {
 // MARK: - 2 ширифта, более удобная версия
 //https://stackoverflow.com/questions/36486761/make-part-of-a-uilabel-bold-in-swift
 
+/* использование
+ titleLabel.text = "Welcome"
+ titleLabel.font = UIFont.systemFont(ofSize: 70, weight: .bold)
+ titleLabel.textColor = UIColor.black
+ titleLabel.changeFont(ofText: "lc", with: UIFont.systemFont(ofSize: 60, weight: .light))
+ titleLabel.changeTextColor(ofText: "el", with: UIColor.blue)
+ titleLabel.changeTextColor(ofText: "co", with: UIColor.red)
+ titleLabel.changeTextColor(ofText: "m", with: UIColor.green)
+ */
+
 public protocol ChangableFont: AnyObject {
     var text: String? { get set }
     var attributedText: NSAttributedString? { get set }
