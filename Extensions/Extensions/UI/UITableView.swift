@@ -18,6 +18,15 @@ extension UITableView {
 
         return index == IndexPath(row: lastRowIndex, section: lastSectionIndex)
     }
+    
+    func isLastSection(index: Int) -> Bool {
+        let lastSectionIndex = self.numberOfSections - 1
+        return index == lastSectionIndex
+    }
+    
+    func removeLastSeparators(){
+        self.tableFooterView = UIView()
+    }
 
     func addTableHeaderViewLine() {
         self.tableHeaderView = {
