@@ -89,6 +89,26 @@ extension UIView {
 
         return all
     }
+    
+//поиск вью определенного класса
+//	ub_firstSubView(ofType: UIScrollView.self)
+    
+    func ub_firstSubView<T: UIView>(ofType type: T.Type) -> T? {
+        var resultView: T?
+        for view in subviews {
+            if let view = view as? T {
+                resultView = view
+                break
+            }
+            else {
+                if let foundView = view.ub_firstSubView(ofType: T.self) {
+                    resultView = foundView
+                    break
+                }
+            }
+        }
+        return resultView
+    }
 
     var recurrenceAllSubviewsZeroTag: [UIView] {//получение всех UIView
 
